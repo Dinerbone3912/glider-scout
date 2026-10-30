@@ -4,8 +4,22 @@
   "description": "Zero-dependency verified-crypto-bounty feed with x402 paywall",
   "type": "module",
   "main": "server.mjs",
-  "bin": { "glider-scout": "server.mjs" },
-  "files": ["server.mjs","paywall.mjs","seed.json","README.md"],
-  "engines": { "node": ">=18" },
-  "license": "MIT"
+  "bin": {
+    "glider-scout": "server.mjs"
+  },
+  "files": [
+    "README.md",
+    "paywall.mjs",
+    "seed.json",
+    "server.mjs",
+    "test-paywall.mjs",
+    "test.mjs"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test test.mjs test-paywall.mjs"
+  }
 }
