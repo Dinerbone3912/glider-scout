@@ -2,9 +2,11 @@
 // Spawns server.mjs, hits it with fetch, verifies teaser/paywall semantics,
 // then shuts it down. Proves the shipped service behaves as advertised.
 import { spawn } from 'node:child_process';
+import net from 'node:net';
+function getFreePort(){ return new Promise((res,rej)=>{ const srv=net.createServer(); srv.listen(0,'127.0.0.1',()=>{ const p=srv.address().port; srv.close(()=>res(p)); }); srv.on('error',rej); }); }
 import { setTimeout as sleep } from 'node:timers/promises';
 
-const PORT = 8799;
+const PORT = await getFreePort();
 const BASE = `http://localhost:${PORT}`;
 const enc = (o) => Buffer.from(JSON.stringify(o)).toString('base64');
 
