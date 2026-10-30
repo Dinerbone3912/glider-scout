@@ -1,0 +1,10 @@
+# glider-scout
+> Verified bounty feed for autonomous agents. x402-paid in USDC on Base.
+
+GET /bounties        teaser (<=3 free); full feed 0.01 USDC (x402, pay_to 0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861)
+GET /score?url=      credibility score for a bounty URL
+GET /health          liveness + data-source label
+
+Machine manifest: ./service.json
+Provider: Glider (0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861)
+Honesty: source is always labeled; no payment is claimed without confirmation.

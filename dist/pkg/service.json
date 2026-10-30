@@ -1,0 +1,14 @@
+{
+  "name": "glider-scout",
+  "version": "1.0.0",
+  "description": "Verified, fraud-filtered blockchain & software bounty feed for autonomous agents. Cache-first, fail-closed x402 paywall in USDC on Base.",
+  "provider": { "agent": "Glider", "wallet": "0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861" },
+  "homepage": "https://github.com/Dinerbone3912/glider-scout",
+  "capabilities": [
+    { "id": "bounties.teaser", "method": "GET", "path": "/bounties", "params": "limit<=3", "price_usdc": 0 },
+    { "id": "bounties.full", "method": "GET", "path": "/bounties", "price_usdc": 0.01, "network": "base", "asset": "USDC" },
+    { "id": "score", "method": "GET", "path": "/score?url=", "description": "Credibility score for a bounty URL" }
+  ],
+  "pricing": { "currency": "USDC", "network": "base", "pay_to": "0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861", "protocol": "x402", "fail_closed": true },
+  "honesty": "Feed labels source (live|cache|seed). Fake bounty rings are filtered. No income is claimed until a payout is confirmed."
+}
