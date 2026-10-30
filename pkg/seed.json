@@ -1,0 +1,635 @@
+{
+  "items": [
+    {
+      "id": "zhangjiayang6835-cyber/bounty-plaza#4171",
+      "repo": "zhangjiayang6835-cyber/bounty-plaza",
+      "number": 4171,
+      "title": "[Bounty] 💰 Bounty Seguro ($$250): [Bounty] 💰 Bounty Seguro ($$250): 💰 Bounty Seguro ",
+      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/4171",
+      "reward": {
+        "amount": 250,
+        "currency": "USD"
+      },
+      "credibility": 95,
+      "verdict": "REAL",
+      "reasons": [
+        "issue resolves"
+      ]
+    },
+    {
+      "id": "zhangjiayang6835-cyber/bounty-plaza#4168",
+      "repo": "zhangjiayang6835-cyber/bounty-plaza",
+      "number": 4168,
+      "title": "[Bounty] 💰 Bounty Seguro ($$250): 💰 Bounty Seguro ($$250): [Bounty] 💰 Bounty Seguro ",
+      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/4168",
+      "reward": {
+        "amount": 250,
+        "currency": "USD"
+      },
+      "credibility": 95,
+      "verdict": "REAL",
+      "reasons": [
+        "issue resolves"
+      ]
+    },
+    {
+      "id": "ditto-assistant/ditto-subnet#2047",
+      "repo": "ditto-assistant/ditto-subnet",
+      "number": 2047,
+      "title": "Publish the DittoBench build-bounty board and GitHub contributor guide",
+      "url": "https://github.com/ditto-assistant/ditto-subnet/issues/2047",
+      "reward": null,
+      "credibility": 95,
+      "verdict": "REAL",
+      "reasons": [
+        "issue resolves"
+      ]
+    },
+    {
+      "id": "AGWAM001/stream-bounty-flow#12",
+      "repo": "AGWAM001/stream-bounty-flow",
+      "number": 12,
+      "title": "Implement a structured dispute resolution mechanism for bounties.",
+      "url": "https://github.com/AGWAM001/stream-bounty-flow/issues/12",
+      "reward": null,
+      "credibility": 60,
+      "verdict": "SUSPECT",
+      "reasons": [
+        "issue resolves"
+      ]
+    },
+    {
+      "id": "riteshbonthalakoti/HELPDESK.AI#4116",
+      "repo": "riteshbonthalakoti/HELPDESK.AI",
+      "number": 4116,
+      "title": "bounty: [level:critical] Predictive SLA Breach Forecasting & Dynamic Capacity Balancing Engine",
+      "url": "https://github.com/riteshbonthalakoti/HELPDESK.AI/issues/4116",
+      "reward": null,
+      "credibility": 55,
+      "verdict": "SUSPECT",
+      "reasons": [
+        "issue resolves"
+      ]
+    },
+    {
+      "id": "riteshbonthalakoti/HELPDESK.AI#4115",
+      "repo": "riteshbonthalakoti/HELPDESK.AI",
+      "number": 4115,
+      "title": "bounty: [level:critical] Agentic Self-Healing Actions Engine: Sandboxed Playbook Execution for Automated Deflection",
+      "url": "https://github.com/riteshbonthalakoti/HELPDESK.AI/issues/4115",
+      "reward": null,
+      "credibility": 55,
+      "verdict": "SUSPECT",
+      "reasons": [
+        "issue resolves"
+      ]
+    },
+    {
+      "id": "Ikalus1988/MisakaNet#4013",
+      "repo": "Ikalus1988/MisakaNet",
+      "number": 4013,
+      "title": "[Bounty] Run a real crash through fatal-guard and post the tombstone + the draft it produced",
+      "url": "https://github.com/Ikalus1988/MisakaNet/issues/4013",
+      "reward": null,
+      "credibility": 55,
+      "verdict": "SUSPECT",
+      "reasons": [
+        "issue resolves"
+      ]
+    },
+    {
+      "id": "alfrexo95/bounty-bot#60",
+      "repo": "alfrexo95/bounty-bot",
+      "number": 60,
+      "title": "💰 Bounty Seguro ($$250): [Bounty] 💰 Bounty Seguro ($$250): [Bounty] 💰 Bount",
+      "url": "https://github.com/alfrexo95/bounty-bot/issues/60",
+      "reward": {
+        "amount": 250,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "SUSPECT",
+      "reasons": [
+        "issue resolves"
+      ]
+    },
+    {
+      "id": "alfrexo95/bounty-bot#58",
+      "repo": "alfrexo95/bounty-bot",
+      "number": 58,
+      "title": "💰 Bounty Seguro ($$250): [Bounty] 💰 Bounty Seguro ($$250): 💰 Bounty Seguro ",
+      "url": "https://github.com/alfrexo95/bounty-bot/issues/58",
+      "reward": {
+        "amount": 250,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "SUSPECT",
+      "reasons": [
+        "issue resolves"
+      ]
+    },
+    {
+      "id": "alfrexo95/bounty-bot#56",
+      "repo": "alfrexo95/bounty-bot",
+      "number": 56,
+      "title": "💰 Bounty Seguro ($$250): 💰 Bounty Seguro ($$250): [Bounty] 💰 Bounty Seguro ",
+      "url": "https://github.com/alfrexo95/bounty-bot/issues/56",
+      "reward": {
+        "amount": 250,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "SUSPECT",
+      "reasons": [
+        "issue resolves"
+      ]
+    },
+    {
+      "id": "alfrexo95/bounty-bot#54",
+      "repo": "alfrexo95/bounty-bot",
+      "number": 54,
+      "title": "💰 Bounty Seguro ($$250): [Bounty] 💰 Bounty Seguro ($$250): [Bounty] Preserv",
+      "url": "https://github.com/alfrexo95/bounty-bot/issues/54",
+      "reward": {
+        "amount": 250,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "SUSPECT",
+      "reasons": [
+        "issue resolves"
+      ]
+    },
+    {
+      "id": "alfrexo95/bounty-bot#64",
+      "repo": "alfrexo95/bounty-bot",
+      "number": 64,
+      "title": "💰 Bounty Seguro (Ver enlace): 🪙 [Web3] bounty: [level:critical] Agentic Self-Hea",
+      "url": "https://github.com/alfrexo95/bounty-bot/issues/64",
+      "reward": null,
+      "credibility": 50,
+      "verdict": "SUSPECT",
+      "reasons": [
+        "issue resolves"
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "Audit contest: Revert v4lend Competition",
+      "url": "",
+      "reward": {
+        "amount": 50000,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "Jira Service Management Connector",
+      "url": "",
+      "reward": {
+        "amount": 250,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "Crafting a Comprehensive Tutorial for Vectara Chat",
+      "url": "",
+      "reward": {
+        "amount": 60,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "BOUNTY: integrate AWS Comprehend as a utility to redact data",
+      "url": "",
+      "reward": {
+        "amount": 50,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "BOUNTY: add support for qdrant vector database in javascript sdk",
+      "url": "",
+      "reward": {
+        "amount": 30,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "BOUNTY: add support for Google Palm2 API in javascript/typescript",
+      "url": "",
+      "reward": {
+        "amount": 25,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "document sveltekit backend instrumentation",
+      "url": "",
+      "reward": {
+        "amount": 20,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "Earn a citation on an external page that already ranks for a relevant query",
+      "url": "",
+      "reward": {
+        "amount": 16,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "Your first bounty is on the house ($10 back when it clears, first five)",
+      "url": "",
+      "reward": {
+        "amount": 10,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "Earn a citation for an open data registry on a real external site",
+      "url": "",
+      "reward": {
+        "amount": 8,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "Best public agent-facing guide or demo for Agent Bounty Feed (MCP / earn-now / x402 client), 5 USDC single winner",
+      "url": "",
+      "reward": {
+        "amount": 5,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "[Feature]: Cross-platform packaging and native installers for Windows, Linux, and macOS",
+      "url": "",
+      "reward": {
+        "amount": 5,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "Remove `disableAutoFocus` in favor of `focusOnHover={false}`",
+      "url": "",
+      "reward": {
+        "amount": 3,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "Approve or decline an agent's held campaign after checking its MAP description",
+      "url": "",
+      "reward": {
+        "amount": 3,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "Answer live Reddit threads with a dated fact from an open registry",
+      "url": "",
+      "reward": {
+        "amount": 3,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "Surprise birthday party for my dad. Create a funny, nicely designed GIF or short video that clearly says Happy Birthday Dad. Deliverable: one GIF or short mp4/webm (3-15s) with re…",
+      "url": "",
+      "reward": {
+        "amount": 1,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "Answer a structured research questionnaire (Respondent profile)",
+      "url": "",
+      "reward": {
+        "amount": 0.15,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "Answer a structured research questionnaire (Exa: common comparison)",
+      "url": "",
+      "reward": {
+        "amount": 0.15,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "Answer a structured research questionnaire (Exa: deep dive)",
+      "url": "",
+      "reward": {
+        "amount": 0.15,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "Answer a structured research questionnaire (Respondent profile)",
+      "url": "",
+      "reward": {
+        "amount": 0.15,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "FlapJax paid task Q78: list our treasury's FLAPJAX outflows of 10-28 and group recipients by first BNB funder. $1 USDC split across 2 answers, plus 250,000 FLAPJAX each",
+      "url": "",
+      "reward": {
+        "amount": 1,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "FlapJax paid task Q76: list our treasury's FLAPJAX outflows of 10-27 and group recipients by first BNB funder. $1 USDC split across 2 answers, plus 250,000 FLAPJAX each",
+      "url": "",
+      "reward": {
+        "amount": 1,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "FlapJax paid task Q74: list our treasury's FLAPJAX outflows of 10-26 and group recipients by first BNB funder. $1 USDC split across 2 answers, plus 250,000 FLAPJAX each",
+      "url": "",
+      "reward": {
+        "amount": 1,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "RaptorX Research Challenge: Ask Better Questions. Find Better Alpha.",
+      "url": "",
+      "reward": {
+        "amount": 125,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "?",
+      "repo": null,
+      "number": null,
+      "title": "# TaskMarket Smart Contract Bug Bounty",
+      "url": "",
+      "reward": {
+        "amount": 100,
+        "currency": "USD"
+      },
+      "credibility": 50,
+      "verdict": "UNVERIFIED",
+      "reasons": [
+        ""
+      ]
+    },
+    {
+      "id": "spoo-vault/spoovault#354",
+      "repo": "spoo-vault/spoovault",
+      "number": 354,
+      "title": "[Docs/Ecosystem] Security Audit Checklist & Responsible Bug Bounty Guidelines",
+      "url": "https://github.com/spoo-vault/spoovault/issues/354",
+      "reward": null,
+      "credibility": 30,
+      "verdict": "SUSPECT",
+      "reasons": [
+        "issue resolves"
+      ]
+    },
+    {
+      "id": "C-Address-Onboarding-Bridge/C-Address-Onboarding-Bridge--Contract#892",
+      "repo": "C-Address-Onboarding-Bridge/C-Address-Onboarding-Bridge--Contract",
+      "number": 892,
+      "title": "contract: drop the crate-wide #![allow(dead_code)] — its TODO(next-bounty) backlog is down to three unused helpers and four unused DataKey variants",
+      "url": "https://github.com/C-Address-Onboarding-Bridge/C-Address-Onboarding-Bridge--Contract/issues/892",
+      "reward": null,
+      "credibility": 30,
+      "verdict": "SUSPECT",
+      "reasons": [
+        "issue resolves"
+      ]
+    },
+    {
+      "id": "MergeFi/backend#613",
+      "repo": "MergeFi/backend",
+      "number": 613,
+      "title": "POST /milestones/:id/allocate and /bounties/:id/approve|reject are documented in Swagger as working operations",
+      "url": "https://github.com/MergeFi/backend/issues/613",
+      "reward": null,
+      "credibility": 30,
+      "verdict": "SUSPECT",
+      "reasons": [
+        "issue resolves"
+      ]
+    },
+    {
+      "id": "jomaaabbe78-spec/bookningsapp#1",
+      "repo": "jomaaabbe78-spec/bookningsapp",
+      "number": 1,
+      "title": "[TEST BOUNTY] Fix typo in README",
+      "url": "https://github.com/jomaaabbe78-spec/bookningsapp/issues/1",
+      "reward": {
+        "amount": 50,
+        "currency": "USD"
+      },
+      "credibility": 25,
+      "verdict": "SUSPECT",
+      "reasons": [
+        "issue resolves"
+      ]
+    }
+  ],
+  "updated": "2026-10-30T14:03:17.689Z",
+  "source": "seed"
+}
