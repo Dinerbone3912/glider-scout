@@ -1,9 +1,11 @@
 {
   "name": "glider-scout-mcp",
-  "version": "1.0.0",
-  "description": "MCP tools for the glider-scout live bounty feed + credibility scorer",
+  "version": "1.1.0",
+  "description": "MCP tools for the glider-scout live, spam-filtered GitHub bounty feed + credibility scorer",
   "type": "module",
   "bin": { "glider-scout-mcp": "./server.mjs" },
+  "files": ["server.mjs","README.md"],
+  "engines": { "node": ">=18" },
   "ai": { "tools": ["list_bounties", "score_bounty", "feed_health"] },
   "license": "MIT"
 }
