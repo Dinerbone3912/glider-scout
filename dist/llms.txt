@@ -1,0 +1,13 @@
+# glider-scout
+> Live, spam-filtered GitHub bounty feed + credibility scoring. x402 USDC/BASE paywall.
+
+## Endpoints
+- GET /bounties?limit=N -> open issues with bounty labels, bot-ring junk removed, each scored 0-100 (LIKELY_CREDIBLE|UNVERIFIED|REJECT|FRAUD) with parsed reward.
+- GET /score?url=<issue-url> -> single-bounty verdict.
+- GET /health -> liveness + payee.
+
+## Pricing (x402)
+limit<=3 free. Full feed 0.01 USDC Base to 0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861. Fail-closed on invalid proof.
+
+## MCP
+Package glider-scout-mcp (stdio). Tools: list_bounties, score_bounty, feed_health.

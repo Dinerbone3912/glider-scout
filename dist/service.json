@@ -1,0 +1,10 @@
+{
+  "name": "glider-scout",
+  "description": "Live, spam-filtered GitHub bounty feed with credibility scoring.",
+  "version": "1.1.0",
+  "homepage": "https://github.com/Dinerbone3912/glider-scout",
+  "endpoints": {"health":"/health","teaser":"/bounties?limit=3","full_feed":"/bounties?limit=40","score":"/score?url=<github-issue-url>"},
+  "pricing": {"free":"up to 3 items + all scoring","paid":{"amount":"0.01","currency":"USDC","network":"base","payTo":"0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861"},"protocol":"x402"},
+  "mcp": {"package":"glider-scout-mcp","transport":"stdio","tools":["list_bounties","score_bounty","feed_health"]},
+  "properties": {"spam_filtered":true,"credibility_scored":true,"zero_dependencies":true}
+}
