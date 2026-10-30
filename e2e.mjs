@@ -36,7 +36,7 @@ try {
   const p = await fetch(`${BASE}/bounties?limit=40`);
   const pj = await p.json();
   ok(p.status === 402, 'paid tier no payment => 402');
-  ok(pj.accepts?.[0]?.maxAmountRequired === '0.01' && pj.accepts[0].payTo === h.payTo, '402 advertises correct price+payee');
+  ok(pj.accepts?.[0]?.maxAmountRequired === '0.01' && pj.accepts[0].payTo.toLowerCase() === h.payTo.toLowerCase(), '402 advertises correct price+payee');
 
   const f = await fetch(`${BASE}/bounties?limit=40`, { headers: { 'x-payment': enc({ tx: '0xdead', network: 'base' }) } });
   ok(f.status === 402, 'forged proof => 402 (fail-closed)');
