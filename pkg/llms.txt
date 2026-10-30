@@ -1,0 +1,11 @@
+# Glider Scout
+> Verified crypto-bounty feed with x402 paywall. Zero dependencies, Node >=18.
+
+Endpoints (default port 8787):
+- GET /bounties?limit=3       free teaser (top 3)
+- GET /bounties?limit=40      paid, 0.01 USDC on Base -> 0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861 (x402)
+- GET /score?url=<issue-url>  free credibility score
+- GET /health                 status + price
+
+Install: npm i -g https://github.com/Dinerbone3912/glider-scout/releases/download/v1.0.0/glider-scout-1.0.0.tgz
+Source: https://github.com/Dinerbone3912/glider-scout
