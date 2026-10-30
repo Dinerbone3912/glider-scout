@@ -4,6 +4,12 @@
 // serves a clean JSON feed. No deps, Node >=18.
 import http from 'node:http';
 import { URL } from 'node:url';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const __dir=path.dirname(fileURLToPath(import.meta.url));
+const CACHE=path.join(__dir,'cache.json');
+const SEED=path.join(__dir,'seed.json');
 
 const PORT = Number(process.env.PORT || 8790);
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '';
@@ -57,21 +63,31 @@ function toFeedItem(issue){
     labels:s.labels,reward:s.reward,credibility:s.score,verdict:s.verdict,reasons:s.reasons};
 }
 
+function readJSON(p){ try{ return JSON.parse(fs.readFileSync(p,'utf8')); }catch{ return null; } }
+
 export async function fetchBounties({lim=40}={}){
+  // 1) Live attempt; on success, persist cache.
   const q=encodeURIComponent('is:issue is:open label:bounty OR label:"💎 Bounty" OR label:reward');
-  let items=[];
-  try{ const data=await gh(`/search/issues?q=${q}&sort=created&order=desc&per_page=${lim}`); items=(data.items||[]).map(toFeedItem); }
-  catch(e){ return {items:[],error:e.message,rateLimited:!!e.rateLimited}; }
-  items=items.filter(i=>i.verdict!=='FRAUD');
-  items.sort((a,b)=>b.credibility-a.credibility);
-  return {items,updated:new Date().toISOString()};
+  try{
+    const data=await gh(`/search/issues?q=${q}&sort=created&order=desc&per_page=${lim}`);
+    let items=(data.items||[]).map(toFeedItem).filter(i=>i.verdict!=='FRAUD');
+    items.sort((a,b)=>b.credibility-a.credibility);
+    if(items.length){ const out={items,updated:new Date().toISOString(),source:'live'}; fs.writeFileSync(CACHE,JSON.stringify(out)); return {...out,items:items.slice(0,lim)}; }
+  }catch(e){ /* fall through to cache */ }
+
+  // 2) Cache, then seed — never return empty if we have prior data.
+  const cached=readJSON(CACHE);
+  if(cached&&cached.items?.length) return {...cached,source:'cache',stale:true,items:cached.items.slice(0,lim)};
+  const seed=readJSON(SEED);
+  if(seed&&seed.items?.length) return {...seed,source:'seed',stale:true,items:seed.items.slice(0,lim)};
+  return {items:[],error:'no data available (offline, no cache/seed)',updated:new Date().toISOString()};
 }
 
 const server=http.createServer(async(req,res)=>{
   const u=new URL(req.url,`http://localhost:${PORT}`);
   const json=(code,obj)=>{res.writeHead(code,{'content-type':'application/json','access-control-allow-origin':'*'});res.end(JSON.stringify(obj));};
   if(u.pathname==='/'||u.pathname==='/health') return json(200,{ok:true,service:'glider-scout',endpoints:['/bounties','/score?url=']});
-  if(u.pathname==='/bounties'){ const lim=Math.min(100,Number(u.searchParams.get('limit')||40)); const d=await fetchBounties({lim}); return json(d.error?503:200,d); }
+  if(u.pathname==='/bounties'){ const lim=Math.min(100,Number(u.searchParams.get('limit')||40)); const d=await fetchBounties({lim}); return json(d.error&&!d.items.length?503:200,d); }
   if(u.pathname==='/score'&&u.searchParams.get('url')){
     const m=u.searchParams.get('url').match(/github\.com\/([^/]+)\/([^/]+)\/issues\/(\d+)/);
     if(!m) return json(400,{error:'expected a github issue URL'});

@@ -22,3 +22,9 @@ never a fabricated verdict.
 
 ## Test
     node test.mjs   # 5/5
+
+## Reliability
+Cache-first: live GitHub fetch → on success caches to `cache.json`; on
+network/rate-limit failure falls back to `cache.json` then `seed.json`.
+Response always labels `source: live|seed|cache` and `stale: true` when
+not live. Never fabricates a verdict from an error.
