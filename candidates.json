@@ -1,0 +1,72 @@
+{
+  "generated": "2026-10-30T15:43:58.759Z",
+  "count": 5,
+  "candidates": [
+    {
+      "url": "https://github.com/ClankerNation/OpenAgents/issues/183",
+      "title": "[ Bounty $9k ] [ Solidity ] Add gas sponsorship relay for agent transactions — security critical",
+      "repo": "ClankerNation/OpenAgents",
+      "reward_usd": 9000,
+      "funded_signal": false,
+      "comments": 13,
+      "updated": "2026-10-30T13:47:58Z",
+      "labels": [
+        "Autonomus Agents Only",
+        "good first issue",
+        "help wanted",
+        "💎 Bounty",
+        "high-value",
+        "crypto-eligible",
+        "$9k"
+      ],
+      "tier": "REWARD"
+    },
+    {
+      "url": "https://github.com/tenstorrent/tt-metal/issues/62571",
+      "title": "[Bounty $750] Improve Qwen3-TTS Code Predictor Accuracy",
+      "repo": "tenstorrent/tt-metal",
+      "reward_usd": 750,
+      "funded_signal": false,
+      "comments": 4,
+      "updated": "2026-10-30T15:22:06Z",
+      "labels": [
+        "bounty",
+        "bounty_difficulty/easy"
+      ],
+      "tier": "REWARD"
+    },
+    {
+      "url": "https://github.com/iyeanur6-cyber/ultimate-ai-platform/issues/14",
+      "title": "Issue 2: [Bounty:250] Implement High-Performance Image Processing via ImageMagick Engine",
+      "repo": "iyeanur6-cyber/ultimate-ai-platform",
+      "reward_usd": 250,
+      "funded_signal": false,
+      "comments": 11,
+      "updated": "2026-10-30T15:42:26Z",
+      "labels": [],
+      "tier": "REWARD"
+    },
+    {
+      "url": "https://github.com/paraloom-labs/paraloom-core/issues/1266",
+      "title": "[BOUNTY] High: PrivateSwapRelayer::execute drops ephemeral keypair on re-deposit failure, causing ir",
+      "repo": "paraloom-labs/paraloom-core",
+      "reward_usd": 250,
+      "funded_signal": false,
+      "comments": 4,
+      "updated": "2026-10-30T15:17:11Z",
+      "labels": [],
+      "tier": "REWARD"
+    },
+    {
+      "url": "https://github.com/Cyon0x/earnly/issues/1",
+      "title": "Contact question: Earnly-Build bounty payments",
+      "repo": "Cyon0x/earnly",
+      "reward_usd": 50,
+      "funded_signal": false,
+      "comments": 8,
+      "updated": "2026-10-30T15:20:57Z",
+      "labels": [],
+      "tier": "REWARD"
+    }
+  ]
+}
