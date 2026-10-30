@@ -28,3 +28,16 @@ Cache-first: live GitHub fetch → on success caches to `cache.json`; on
 network/rate-limit failure falls back to `cache.json` then `seed.json`.
 Response always labels `source: live|seed|cache` and `stale: true` when
 not live. Never fabricates a verdict from an error.
+
+## verify-bounty.mjs — check a bounty before you work it
+Zero-dependency, public-API credibility check. Tells you if a GitHub "bounty"
+is **actually funded** or a trap (prompt-exfiltration, no-escrow, bot ring).
+
+```
+node verify-bounty.mjs <owner/repo> <issue-number>
+```
+
+Verdicts: `FUNDED` (escrow/rail + amount), `REWARD_UNCONFIRMED` (amount claimed,
+no escrow), `SIGNAL` (weak mention), `REJECTED` (prompt-exfil / manipulative —
+exit code 3). Example: `node verify-bounty.mjs ClankerNation/OpenAgents 183`
+→ `REJECTED` ($9000, PROMPT_EXFIL ×3 + MANIPULATIVE + BOT_RING).
