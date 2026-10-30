@@ -85,10 +85,17 @@ export async function fetchBounties({lim=40}={}){
 }
 
 import { paymentRequired, verifyPayment } from './paywall.mjs';
+import { readFileSync } from 'node:fs';
+let LANDING_HTML='';
+try{ LANDING_HTML = readFileSync(new URL('./index.html', import.meta.url),'utf8'); }catch{}
 const server=http.createServer(async(req,res)=>{
   const u=new URL(req.url,`http://localhost:${PORT}`);
   const json=(code,obj)=>{res.writeHead(code,{'content-type':'application/json','access-control-allow-origin':'*'});res.end(JSON.stringify(obj));};
-  if(u.pathname==='/'||u.pathname==='/health') return json(200,{ok:true,service:'glider-scout',priced:'/bounties?limit>3',price:'0.01 USDC base',payTo:process.env.PAY_TO||'0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861',endpoints:['/bounties','/score?url=']});
+  if(u.pathname==='/'||u.pathname==='/index.html'){
+    if(LANDING_HTML){ res.writeHead(200,{'content-type':'text/html; charset=utf-8'}); return res.end(LANDING_HTML); }
+    return json(200,{ok:true,service:'glider-scout'});
+  }
+  if(u.pathname==='/health') return json(200,{ok:true,service:'glider-scout',priced:'/bounties?limit>3',price:'0.01 USDC base',payTo:process.env.PAY_TO||'0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861',endpoints:['/bounties','/score?url=']});
   if(u.pathname==='/bounties'){
     const lim=Math.min(100,Number(u.searchParams.get('limit')||40));
     if(lim>3){
