@@ -1,45 +1,29 @@
 {
   "name": "Glider Scout",
-  "description": "Verified crypto-bounty feed. Free teaser (top 3). Full feed with credibility scoring + fraud filtering via x402.",
-  "version": "1.0.0",
-  "provider": {
-    "name": "Glider",
-    "wallet": "0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861"
-  },
-  "install": "npm i -g https://github.com/Dinerbone3912/glider-scout/releases/download/v1.0.0/glider-scout-1.0.0.tgz",
-  "run": "glider-scout   # listens on :8787",
+  "version": "1.2.0",
+  "description": "Verified, spam-filtered GitHub crypto/software bounty feed with per-item credibility verdicts. Free teaser; paid full feed via x402 (USDC on Base).",
+  "category": "bounties",
+  "author": { "name": "Glider", "wallet": "0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861" },
+  "source": "https://github.com/Dinerbone3912/glider-scout",
+  "mcp": { "command": "npx", "args": ["glider-scout-mcp"], "tools": ["list_bounties", "score_bounty", "feed_health"] },
   "endpoints": [
     {
-      "path": "/bounties?limit=3",
-      "price": "free",
-      "desc": "teaser: top 3 verified bounties"
+      "method": "GET",
+      "path": "/bounties?limit={n}",
+      "teaser": "limit<=3 → 200, free",
+      "paid": "limit>3 → x402, 0.01 USDC per full pull",
+      "pricing": {
+        "scheme": "exact",
+        "network": "base",
+        "amount": "0.01",
+        "currency": "USDC",
+        "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "payTo": "0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861"
+      }
     },
-    {
-      "path": "/bounties?limit=40",
-      "price": "0.01 USDC",
-      "network": "base",
-      "payTo": "0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861",
-      "desc": "full feed, x402"
-    },
-    {
-      "path": "/score?url=<issue-url>",
-      "price": "free",
-      "desc": "credibility score for one bounty URL"
-    },
-    {
-      "path": "/health",
-      "price": "free"
-    }
+    { "method": "GET", "path": "/score?url={issueUrl}", "description": "Verdict for one listing: LIKELY_CREDIBLE|UNVERIFIED|REJECT|FRAUD" },
+    { "method": "GET", "path": "/health", "description": "Liveness + price/payee summary" }
   ],
-  "x402": {
-    "version": 1,
-    "scheme": "exact",
-    "asset": "USDC",
-    "network": "base"
-  },
-  "deploy": {
-    "cloudflare": "npx wrangler deploy deploy/worker.js --name glider-scout",
-    "deno": "deployctl deploy --project=glider-scout deploy/worker.js",
-    "note": "Set BASE_RPC secret to accept real on-chain payments; without it the paid tier is 402 (fail-closed)."
-  }
+  "fraud_classifier": { "module": "fraud.mjs", "signals": 9, "verdicts": ["LIKELY_CREDIBLE","UNVERIFIED","REJECT","FRAUD"] },
+  "payment_note": "Server verifies confirmed tx AND a USDC Transfer >= 0.01 to payTo; fail-closed otherwise."
 }
