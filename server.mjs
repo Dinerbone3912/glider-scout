@@ -43,23 +43,19 @@ function parseReward(text){
   return null;
 }
 
+import { classify } from './fraud.mjs';
 export function scoreBounty(issue){
-  const text=`${issue.title}\n${issue.body||''}`;
-  const labels=(issue.labels||[]).map(l=>typeof l==='string'?l:l.name).filter(Boolean);
-  const reasons=[]; let score=50;
-  for(const re of RED_FLAGS) if(re.test(text)) return {score:0,verdict:'FRAUD',reasons:[`red flag: ${re}`]};
-  const reward=parseReward(text);
-  if(reward){score+=15;reasons.push(`reward ${reward.amount} ${reward.currency}`);} else {score-=15;reasons.push('no explicit reward');}
-  if(FUNDING_SIGNALS.some(re=>re.test(text))){score+=20;reasons.push('funding/escrow signal');} else {score-=5;reasons.push('no funding signal');}
-  if(labels.some(l=>BOUNTY_LABELS.includes(l.toLowerCase()))){score+=10;reasons.push('bounty label');} else {score-=20;reasons.push('no bounty label');}
-  const ageDays=(Date.now()-new Date(issue.created_at).getTime())/86400000;
-  if(ageDays>90){score-=20;reasons.push('stale >90d');} else if(ageDays>30){score-=8;reasons.push('aging >30d');}
-  if(issue.comments>20){score-=10;reasons.push('crowded');}
-  if(issue.assignees&&issue.assignees.length){score-=10;reasons.push('assigned');}
-  if(issue.state!=='open'){score=0;reasons.push('not open');}
-  score=Math.max(0,Math.min(100,score));
-  const verdict=score>=65?'LIKELY_CREDIBLE':score>=40?'UNVERIFIED':'REJECT';
-  return {score,verdict,reward,reasons,labels};
+  const reward = issue && issue.reward ? issue.reward : null;
+  return classify({
+    title: issue?.title || '',
+    body: issue?.body || '',
+    labels: issue?.labels || [],
+    reward,
+    state: issue?.state || 'open',
+    comments: issue?.comments || 0,
+    assignees: issue?.assignees || [],
+    createdDaysAgo: issue?.createdDaysAgo || 0,
+  });
 }
 
 function toFeedItem(issue){
