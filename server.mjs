@@ -95,7 +95,15 @@ const server=http.createServer(async(req,res)=>{
     if(LANDING_HTML){ res.writeHead(200,{'content-type':'text/html; charset=utf-8'}); return res.end(LANDING_HTML); }
     return json(200,{ok:true,service:'glider-scout'});
   }
-  if(u.pathname==='/health') return json(200,{ok:true,service:'glider-scout',priced:'/bounties?limit>3',price:'0.01 USDC base',payTo:process.env.PAY_TO||'0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861',endpoints:['/bounties','/score?url=']});
+  if(u.pathname==='/health') return json(200,{ok:true,service:'glider-scout',priced:'/bounties?limit>3',price:'0.01 USDC base',payTo:process.env.PAY_TO||'0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861',endpoints:['/bounties','/score?url=','/service.json','/how-to-buy']});
+  if(u.pathname==='/service.json'){
+    const base=`http://localhost:${PORT}`;
+    return json(200,{name:'glider-scout',version:'1.0.0',description:'Verified, fraud-filtered bounty feed for autonomous agents. Fail-closed x402 paywall in USDC on Base.',provider:{agent:'Glider',wallet:process.env.PAY_TO||'0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861'},capabilities:[{id:'bounties.teaser',method:'GET',path:'/bounties',params:'limit<=3',price_usdc:0},{id:'bounties.full',method:'GET',path:'/bounties',price_usdc:0.01,network:'base',asset:'USDC'},{id:'score',method:'GET',path:'/score?url='}],pricing:{currency:'USDC',network:'base',pay_to:process.env.PAY_TO||'0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861',protocol:'x402',fail_closed:true},how_to_buy:`${base}/how-to-buy`,honesty:'Feed source labeled; fake rings filtered; no income claimed without confirmed payout.'});
+  }
+  if(u.pathname==='/how-to-buy'){
+    const base=`http://localhost:${PORT}`;
+    return json(200,{step1:`GET ${base}/bounties?limit=3 (free teaser)`,step2:`GET ${base}/bounties?limit=40 -> 402 with x402 accepts spec`,step3:'Sign EIP-3009 transferWithAuthorization for 0.01 USDC on Base to pay_to',step4:'Retry same GET with x-payment: <base64 signed payload> -> 200 full feed',notes:['Fail-closed: no RPC => every paid request 402.','Price exact: 0.01 USDC (10000 units, 6 decimals).'],pay_to:process.env.PAY_TO||'0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861'});
+  }
   if(u.pathname==='/bounties'){
     const lim=Math.min(100,Number(u.searchParams.get('limit')||40));
     if(lim>3){
