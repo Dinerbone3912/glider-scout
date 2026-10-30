@@ -112,5 +112,7 @@ const server=http.createServer(async(req,res)=>{
   }
   json(404,{error:'not found'});
 });
-if(import.meta.url===`file://${process.argv[1]}`){server.listen(PORT,()=>console.log(`glider-scout on :${PORT}`));}
+import { realpathSync } from 'node:fs';
+function __isMain(){ try{ return import.meta.url===`file://${realpathSync(process.argv[1])}`; }catch{ return false; } }
+if(__isMain()){server.listen(PORT,()=>console.log(`glider-scout on :${PORT}`));}
 export {server};
