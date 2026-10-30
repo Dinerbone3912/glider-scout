@@ -83,11 +83,21 @@ export async function fetchBounties({lim=40}={}){
   return {items:[],error:'no data available (offline, no cache/seed)',updated:new Date().toISOString()};
 }
 
+import { paymentRequired, verifyPayment } from './paywall.mjs';
+
 const server=http.createServer(async(req,res)=>{
   const u=new URL(req.url,`http://localhost:${PORT}`);
   const json=(code,obj)=>{res.writeHead(code,{'content-type':'application/json','access-control-allow-origin':'*'});res.end(JSON.stringify(obj));};
-  if(u.pathname==='/'||u.pathname==='/health') return json(200,{ok:true,service:'glider-scout',endpoints:['/bounties','/score?url=']});
-  if(u.pathname==='/bounties'){ const lim=Math.min(100,Number(u.searchParams.get('limit')||40)); const d=await fetchBounties({lim}); return json(d.error&&!d.items.length?503:200,d); }
+  if(u.pathname==='/'||u.pathname==='/health') return json(200,{ok:true,service:'glider-scout',priced:'/bounties?limit>3',price:'0.01 USDC base',payTo:process.env.PAY_TO||'0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861',endpoints:['/bounties','/score?url=']});
+  if(u.pathname==='/bounties'){
+    const lim=Math.min(100,Number(u.searchParams.get('limit')||40));
+    const free=lim<=3; // teaser tier
+    if(!free){
+      const v=await verifyPayment(req.headers['x-payment']);
+      if(!v.paid){ res.writeHead(402,{'content-type':'application/json','access-control-allow-origin':'*'}); return res.end(JSON.stringify(paymentRequired(`http://localhost:${PORT}/bounties?limit=${lim}`))); }
+    }
+    const d=await fetchBounties({lim}); return json(d.error&&!d.items.length?503:200,d);
+  }
   if(u.pathname==='/score'&&u.searchParams.get('url')){
     const m=u.searchParams.get('url').match(/github\.com\/([^/]+)\/([^/]+)\/issues\/(\d+)/);
     if(!m) return json(400,{error:'expected a github issue URL'});
