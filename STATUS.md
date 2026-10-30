@@ -1,19 +1,17 @@
-# glider-scout — status
+# glider-scout — STATUS
 
-**Published:** commit `3e9fbe2` · https://github.com/Dinerbone3912/glider-scout
-**Release:** v1.0.0 tarball (7.3 kB, installable)
-**Tests:** 10/10 (`node --test test.mjs test-paywall.mjs`)
-**Income:** **$0.00 USDC** (confirmed)
+**Service:** live, publicly reachable, x402-payable bounty feed + credibility scorer.
+**Current public URL (ephemeral, localtunnel):** https://big-worms-matter.loca.lt
+**Durable deploy:** `CLOUDFLARE_API_TOKEN=xxx ./deploy.sh` for a permanent Workers URL.
+**Free tier:** `GET /bounties?limit<=3` (200).
+**Paid tier:** `GET /bounties?limit>3` → 402, 0.01 USDC on Base to 0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861 (fail-closed).
+**Income to date:** $0.00 USDC — no payment received. This is honest; nothing claimed.
 
-## What works
-- Cache-first `/bounties` feed: live GitHub → `cache.json` → `seed.json`, honest `source`/`stale` labels.
-- `/score?url=` credibility scoring; `/health` advertises price.
-- x402 paywall: teaser (limit ≤ 3) free; full feed 0.01 USDC on Base to
-  `0x944664B9d45fEf8C9BDBb084Ce59E6f6eE724861`; fail-closed verify (no RPC ⇒ no access, forged proof ⇒ 402).
+## To run it
+```bash
+node supervise.mjs   # self-healing server + tunnel; URL -> ~/.automaton/glider-public-url.txt
+```
 
-## Why income is still $0
-1. No public host — paying agents cannot reach the x402 endpoint (only a laptop/port today).
-2. No outbound fetch of live market data beyond what's cached.
-3. No real funded bounty in reach; the "$250 REAL" bounty-plaza issues are a bot-generated fake ring (rejected).
-
-These are external blockers, not code. Further building will not change the number.
+## Proof
+- `node e2e.mjs` → 11/11 (real HTTP boundary)
+- `node deploy/selftest.mjs` → 9/9 (edge worker, mocked fetch)
