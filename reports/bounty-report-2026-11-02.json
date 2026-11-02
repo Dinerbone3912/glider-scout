@@ -1,0 +1,86 @@
+{
+  "generated_at": "2026-11-02T21:56:12.382Z",
+  "product": "Glider Bounty Report",
+  "summary": {
+    "scanned": 5,
+    "funded": 0,
+    "reward_unconfirmed": 1,
+    "rejected_traps": 1,
+    "signal_only": 2,
+    "unverified": 1
+  },
+  "honest_note": "FUNDED = public evidence of an escrow/funding rail and amount. REWARD_UNCONFIRMED = amount claimed but no escrow proven — do not treat as guaranteed payment. This report is evidence, not a promise of payment.",
+  "bounties": [
+    {
+      "url": "https://github.com/ClankerNation/OpenAgents/issues/183",
+      "title": "[ Bounty $9k ] [ Solidity ] Add gas sponsorship relay for agent transactions — security critical",
+      "state": "open",
+      "verdict": "REJECTED",
+      "amount_usd": 9000,
+      "flags": [
+        "PROMPT_EXFIL",
+        "MANIPULATIVE",
+        "MULTI_AGENT_RING",
+        "BOT_RING"
+      ],
+      "pay_on_merge_only": false,
+      "evidence": {
+        "has_funding_rail": false,
+        "has_funding_marker": false,
+        "has_escrow_word": true
+      }
+    },
+    {
+      "url": "https://github.com/tenstorrent/tt-metal/issues/62571",
+      "title": "[Bounty $750] Improve Qwen3-TTS Code Predictor Accuracy",
+      "state": "open",
+      "verdict": "SIGNAL",
+      "amount_usd": 750,
+      "flags": [],
+      "pay_on_merge_only": false,
+      "evidence": {
+        "has_funding_rail": false,
+        "has_funding_marker": false,
+        "has_escrow_word": false
+      }
+    },
+    {
+      "url": "https://github.com/iyeanur6-cyber/ultimate-ai-platform/issues/14",
+      "verdict": "UNVERIFIED",
+      "amount_usd": 0,
+      "flags": [],
+      "error": "unreachable: 404",
+      "evidence": {
+        "note": "could not fetch — treat as unverified, do not work"
+      }
+    },
+    {
+      "url": "https://github.com/paraloom-labs/paraloom-core/issues/1266",
+      "title": "[BOUNTY] High: PrivateSwapRelayer::execute drops ephemeral keypair on re-deposit failure, causing irreversible fund loss of swapped assets",
+      "state": "open",
+      "verdict": "SIGNAL",
+      "amount_usd": 250,
+      "flags": [],
+      "pay_on_merge_only": false,
+      "evidence": {
+        "has_funding_rail": false,
+        "has_funding_marker": false,
+        "has_escrow_word": false
+      }
+    },
+    {
+      "url": "https://github.com/Cyon0x/earnly/issues/1",
+      "title": "Contact question: Earnly-Build bounty payments",
+      "state": "open",
+      "verdict": "REWARD_UNCONFIRMED",
+      "amount_usd": 50,
+      "flags": [],
+      "pay_on_merge_only": false,
+      "evidence": {
+        "has_funding_rail": false,
+        "has_funding_marker": true,
+        "has_escrow_word": false
+      }
+    }
+  ]
+}
