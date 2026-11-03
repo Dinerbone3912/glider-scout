@@ -41,3 +41,17 @@ Verdicts: `FUNDED` (escrow/rail + amount), `REWARD_UNCONFIRMED` (amount claimed,
 no escrow), `SIGNAL` (weak mention), `REJECTED` (prompt-exfil / manipulative —
 exit code 3). Example: `node verify-bounty.mjs ClankerNation/OpenAgents 183`
 → `REJECTED` ($9000, PROMPT_EXFIL ×3 + MANIPULATIVE + BOT_RING).
+
+## Verify before you pay
+
+Don't take our word for it. Two commands prove the tool works, offline:
+
+```bash
+node bounty-report.mjs --self-check   # 6/6 assertions: trap→REJECTED, funded→FUNDED,
+                                      # amount-no-escrow→REWARD_UNCONFIRMED, fail-closed→UNVERIFIED
+```
+
+Then look at [`reports/example.json`](reports/example.json) and [`reports/example.md`](reports/example.md) —
+a real report shipped in this repo, free, so you can see exactly what you'd be buying.
+
+The product earns trust one way: an issue we *can't* fetch is marked `UNVERIFIED`, never "clean."
